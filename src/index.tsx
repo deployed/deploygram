@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import AuthorizationWrapper from 'providers/AuthorizationWrapper';
+import 'index.css';
 
 ReactDOM.render(
   <React.StrictMode>

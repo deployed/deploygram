@@ -8,7 +8,7 @@ import { ReactComponent as DeploygramLogo } from 'images/deploygram-logo.svg';
 
 const LoginView = () => (
     <Container sx={{ width: '100vw', height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Card sx={{ width: 350 }}>
+        <Card sx={{ width: 350, backgroundColor: 'white' }}>
             <CardContent>
                 <Box 
                     sx={{ display: 'flex', flexDirection: 'column'}} 
