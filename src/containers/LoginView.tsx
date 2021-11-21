@@ -1,29 +1,29 @@
-import { useState, ChangeEventHandler, FormEventHandler } from 'react';
-import { useUserContext } from 'providers/AuthorizationWrapper';
+import LoginForm from 'components/LoginForm';
 
-const LoginView = () => {
-    const [username, setUsername] = useState<string>('');
-    const { saveUser } = useUserContext();
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-    const onChangeHandler: ChangeEventHandler<HTMLInputElement> = (e) => setUsername(e.target.value);
-    const onSubmitHandler: FormEventHandler<HTMLFormElement> = (e) => {
-        e.preventDefault();
-        saveUser(username);
-    }
 
-    return (
-        <div>
-            <form onSubmit={onSubmitHandler}>
-                <label htmlFor="username">Enter your username</label>
-                <input 
-                    name="username"  
-                    type="text" 
-                    value={username} 
-                    onChange={onChangeHandler}
-                />
-            </form>
-        </div>
-    )
-}
+const LoginView = () => (
+        <Card sx={{ width: 350 }}>
+            <CardContent>
+                <Box 
+                    sx={{ display: 'flex', flexDirection: 'column'}} 
+                    component="div"
+                >
+                    <Typography 
+                        sx={{ p: 3, textAlign: 'center' }} 
+                        component="h1" 
+                        fontSize="large"
+                    >
+                        Deploygram
+                    </Typography>
+                    <LoginForm />
+                </Box>
+            </CardContent>
+        </Card>
+    );
 
 export default LoginView
