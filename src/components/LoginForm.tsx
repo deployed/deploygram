@@ -8,12 +8,17 @@ import Button from '@mui/material/Button';
 
 const Login = () => {
     const [username, setUsername] = useState<string>('');
+    const [bio, setBio] = useState<string>('');
     const { saveUser } = useUserContext();
 
-    const onChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => setUsername(e.target.value);
+    const onUsernameChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => setUsername(e.target.value);
+    const onBioChangeHandler: React.ChangeEventHandler<HTMLInputElement> = (e) => setBio(e.target.value);
     const onSubmitHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
-        saveUser(username);
+        saveUser({
+            user: username,
+            bio
+        });
     }
     return (
             <Box 
@@ -28,9 +33,20 @@ const Login = () => {
                         type="text" 
                         label="username"
                         value={username} 
-                        onChange={onChangeHandler}
+                        onChange={onUsernameChangeHandler}
                     />
-                    <Button sx={{ m:1 }} variant="contained">
+                    <TextField 
+                        sx={{ m:1 }}
+                        variant="outlined" 
+                        multiline
+                        rows={3}
+                        name="bio"  
+                        type="text" 
+                        label="bio"
+                        value={bio} 
+                        onChange={onBioChangeHandler}
+                    />
+                    <Button type="submit" disabled={!username} sx={{ m:1 }} variant="contained">
                         <Typography> Log In</Typography>
                     </Button>
             </Box>

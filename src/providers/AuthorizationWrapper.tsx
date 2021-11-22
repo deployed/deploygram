@@ -2,9 +2,14 @@ import { useState, createContext, useContext } from 'react';
 import LoginView from 'containers/LoginView';
 
 
+type UserData = { 
+    user: string;
+    bio: string;
+}
+
 type UserContextType = {
-    user: string | null;
-    saveUser: (username: string) => void;
+    user: UserData | null;
+    saveUser: (data: UserData) => void;
 } | null;
 
 export const UserContext = createContext<UserContextType>(null);
@@ -18,10 +23,12 @@ export const useUserContext = () => {
 };
 
 const AuthorizationWrapper: React.FC = ({children}) => {
-    const [user, setUser] = useState(localStorage.getItem('user'))
-    const saveUser = (username: string) => {
-        setUser(username);
-        localStorage.setItem('user', username);
+    const dataFromStorage = localStorage.getItem('user');
+    const initialData = dataFromStorage ? JSON.parse(dataFromStorage) : '';
+    const [user, setUser] = useState(initialData);
+    const saveUser = (userData: UserData) => {
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
     }
     const ctxValue = { user, saveUser };
 
