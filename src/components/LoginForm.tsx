@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const Login = () => {
+const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
     const [bio, setBio] = useState<string>('');
     const { saveUser } = useUserContext();
@@ -19,38 +19,39 @@ const Login = () => {
             user: username,
             bio
         });
-    }
-    return (
-            <Box 
-                sx={{ display: 'flex', flexDirection: 'column'}} 
-                component="form" 
-                onSubmit={onSubmitHandler}
-            >
-                    <TextField 
-                        sx={{ m:1 }}
-                        variant="outlined" 
-                        name="username"  
-                        type="text" 
-                        label="username"
-                        value={username} 
-                        onChange={onUsernameChangeHandler}
-                    />
-                    <TextField 
-                        sx={{ m:1 }}
-                        variant="outlined" 
-                        multiline
-                        rows={3}
-                        name="bio"  
-                        type="text" 
-                        label="bio"
-                        value={bio} 
-                        onChange={onBioChangeHandler}
-                    />
-                    <Button type="submit" disabled={!username} sx={{ m:1 }} variant="contained">
-                        <Typography> Log In</Typography>
-                    </Button>
-            </Box>
-    )
-}
+    };
 
-export default Login
+    return (
+        <Box 
+            sx={{ display: 'flex', flexDirection: 'column' }} 
+            component="form" 
+            onSubmit={onSubmitHandler}
+        >
+            <TextField 
+                sx={{ m:1 }}
+                variant="outlined" 
+                name="username"  
+                type="text" 
+                label="username"
+                value={username} 
+                onChange={onUsernameChangeHandler}
+            />
+            <TextField 
+                sx={{ m:1 }}
+                variant="outlined" 
+                multiline
+                rows={3}
+                name="bio"  
+                type="text" 
+                label="bio"
+                value={bio} 
+                onChange={onBioChangeHandler}
+            />
+            <Button type="submit" disabled={!username} sx={{ m:1 }} variant="contained">
+                <Typography> Log In</Typography>
+            </Button>
+        </Box>
+    );
+};
+
+export default Login;
