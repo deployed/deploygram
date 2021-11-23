@@ -4,12 +4,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
+import AuthorizationWrapper from 'providers/AuthorizationWrapper';
+import 'index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <AuthorizationWrapper>
+        <App />
+      </AuthorizationWrapper>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
