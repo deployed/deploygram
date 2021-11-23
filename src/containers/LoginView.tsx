@@ -6,12 +6,12 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import deploygramLogo from 'images/deploygram-logo.png';
 
-const LoginView = () => (
-    <Container sx={{ width: '100vw', height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+const LoginView: React.FC = () => (
+    <Container sx={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Card sx={{ width: 350, backgroundColor: 'white' }}>
             <CardContent>
                 <Box 
-                    sx={{ display: 'flex', flexDirection: 'column'}} 
+                    sx={{ display: 'flex', flexDirection: 'column' }} 
                     component="div"
                 >
                     <Box component="figure" sx={{ display: 'flex', justifyContent: 'center', m: 4 }}>
@@ -22,6 +22,6 @@ const LoginView = () => (
             </CardContent>
         </Card>
     </Container>
-    );
+);
 
-export default LoginView
+export default LoginView;

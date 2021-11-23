@@ -5,18 +5,21 @@ import reportWebVitals from './reportWebVitals';
 import theme from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import AuthorizationWrapper from 'providers/AuthorizationWrapper';
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AuthorizationWrapper>
-        <App />
-      </AuthorizationWrapper>
-    </ThemeProvider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Router>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <AuthorizationWrapper>
+                    <App />
+                </AuthorizationWrapper>
+            </ThemeProvider>
+        </Router>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
