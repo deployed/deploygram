@@ -18,7 +18,7 @@ const NavigationBar = () => {
     <Box height="80px" display="flex" paddingX={3} alignItems="center" borderBottom="1px solid #dadada">
       <Stack direction="row" justifyContent="space-between" width="100%" marginX="auto">
         <Box sx={{cursor: 'pointer'}} onClick={() => navigate('/')}>
-          <img src={logo} alt="Logo" width="183px"/>
+          <img src={logo} alt="logo" width="183px"/>
         </Box>
         <Stack direction="row" spacing={1} alignItems="center">
           <IconButton aria-label="home" size="large" onClick={() => navigate('/')}>
