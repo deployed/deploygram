@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import deploygramLogo from 'images/deploygram-logo.png';
 
 const LoginView = () => (
-    <Container sx={{ width: '100vw', height: '90vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Container sx={{ width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Card sx={{ width: 350, backgroundColor: 'white' }}>
             <CardContent>
                 <Box 
