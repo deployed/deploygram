@@ -16,7 +16,7 @@ const Login: React.FC = () => {
     const onSubmitHandler: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
         saveUser({
-            user: username,
+            nickname: username,
             bio
         });
     };

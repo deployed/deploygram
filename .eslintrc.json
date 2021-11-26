@@ -39,9 +39,9 @@
             "warn",
             "always"
         ],
-        "camelcase": "error",
+        "camelcase": "warn",
         "react/prop-types": "off",
-        "object-curly-spacing": ["error", "always"],
+        "object-curly-spacing": ["warn", "always"],
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",

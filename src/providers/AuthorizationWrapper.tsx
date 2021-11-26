@@ -1,10 +1,16 @@
 import { useState, createContext, useContext } from 'react';
+import axios from 'axios';
+
 import LoginView from 'containers/LoginView';
 
 
 type UserData = { 
-    user: string;
+    nickname: string;
     bio: string;
+}
+
+type User = UserData & {
+    id: string;
 }
 
 type UserContextType = {
@@ -25,11 +31,18 @@ export const useUserContext = (): UserContextType => {
 const AuthorizationWrapper: React.FC = ({ children }) => {
     const dataFromStorage = localStorage.getItem('user');
     const initialData = dataFromStorage ? JSON.parse(dataFromStorage) : '';
-    const [user, setUser] = useState(initialData);
+    const [user, setUser] = useState<User | null>(initialData);
 
-    const saveUser = (userData: UserData): void => {
-        setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
+    const saveUser = async (userData: UserData): Promise<void> => {
+        try {
+            console.log(userData);
+            const response = await axios.post<User>('https://deploygram.deployed.space/users', userData);
+            console.log(response);
+            setUser(response.data);
+            localStorage.setItem('user', JSON.stringify(response.data));
+        } catch (err) {
+            setUser(null);
+        }
     };
 
     const ctxValue = { user, saveUser };
