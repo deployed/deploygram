@@ -5,11 +5,21 @@
 3. Run yarn to install packages
 4. Run yarn start to start the project
 
+# Naming your branch 
 
-# GIT
+Name your branch `issue_number_group_sign_issue-name`.
 
-## Branch name
+Eg. issue `Stories list #4` for the group A becomes `4_A_stories_list`
+# Workflow
 
-Name your branch `issue_number_issue-name`.
+1. Choose the task from github issues: https://github.com/deployed/deploygram/issues
+2. Create branch from your master with the proper name
+3. Write the code 
+4. Push you changes and create Pull Request to your master
+5. Wait for code review
+6. If there are requested changes, fix your code
 
-Eg. issue `Stories list #4` becomes `4_stories_list`
+If everything is alright, mentor will approve your PULL REQUEST and merge it to master.
+
+
+
