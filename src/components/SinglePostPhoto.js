@@ -22,17 +22,13 @@ const SinglePostPhoto = () => {
   ];
 
   const { id } = useParams();
-  const [photosSrc, setPhotosSrc] = useState([
-    "https://digitalcamerapolska.pl/i/images/6/8/8/_src_12688-jak_robic_ostre_zdjecia_01.jpg",
-  ]);
-  console.log(photosSrc);
+  const [photosSrc, setPhotosSrc] = useState([]);
 
   useEffect(() => {
     axios
       .get(`https://deploygram.deployed.space/posts/${id}`)
       .then((response) => {
-        console.log(photosSrc);
-        setPhotosSrc((old) => [...old, ...response.data.images]);
+        setPhotosSrc(response.data.images);
       });
   }, []);
 
