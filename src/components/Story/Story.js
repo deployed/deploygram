@@ -1,7 +1,7 @@
 import { StyledStack, StyledAvatar, StyledTypography } from './styles';
 
 const Story = ( { image, username } ) => {
-    if (username?.length >= 10)
+    if (username?.length >= 8)
     {
         username = username.substring(0, 8) + '...';
     }

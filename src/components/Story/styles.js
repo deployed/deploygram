@@ -15,7 +15,9 @@ export const StyledStack = styled(Stack)({
     alignItems: 'center',
     backgroundColor: grey[50],
     width: '84px',
-    padding: '1em'
+    padding: '1em',
+    margin: '0 1em'
+
 });
     
 export const StyledTypography = styled(Typography)({
