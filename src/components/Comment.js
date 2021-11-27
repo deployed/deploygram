@@ -20,7 +20,7 @@ function Comment({userName, text, creationDate, imgUrl}) {
                         <p className="user">{userName}</p>
                         <p className="text">{text}</p>
                     </div>
-                    <p className="date">{day + "-" + month + "-" + day + " " + h + "h " + m + "min"}</p>
+                    <p className="date">{day + "-" + month + "-" + year + " " + h + "h " + m + "min"}</p>
                 </div>
             </div>
         </>
