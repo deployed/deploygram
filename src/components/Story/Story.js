@@ -1,6 +1,6 @@
 import { StyledStack, StyledAvatar, StyledTypography } from './styles';
 
-export const Story = ( { image, username } ) => {
+const Story = ( { image, username } ) => {
     if (username?.length >= 10)
     {
         username = username.substring(0, 8) + '...';
