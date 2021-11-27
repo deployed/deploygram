@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import Button from '@mui/material/Button';
-//import TextField from '@mui/material/TextField';
+import React from 'react';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-//import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { height } from '@mui/system';
 import Dropzone from 'components/popup/Dropzone';
 
 
