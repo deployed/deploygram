@@ -5,6 +5,7 @@ import PostPreview from 'components/PostPreview';
 import Box from '@mui/material/Box';
 import StoriesList from 'components/StoriesList/StoriesList';
 import Sidebar from './SidebarFolder/Sidebar';
+import { fetchPosts } from 'components/PostList';
 
 const Home = () => {
     const [posts, setPosts] = useState([]);
@@ -18,8 +19,9 @@ const Home = () => {
     return (
         <Stack direction="row" spacing={2}>
             <Stack flex={1}>
+                <StoriesList/>
                 {posts.map(post => (
-                    <ImageAvatars key={post.id} profileName={post.userId} description={post.description}  profileImage={post.images[0]} />
+                    <PostPreview key={post.id} name={post.userId} comment={post.description}  imageSrc={post.images[0]} />
                 ))}
             </Stack>
             <Stack width="300px">
