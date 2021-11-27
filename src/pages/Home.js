@@ -1,4 +1,5 @@
 import PostInfo from 'components/PostInfo';
+import InputWithIcon from 'components/CommentForm';
 
 import Stack from '@mui/material/Stack';
 
