@@ -1,4 +1,5 @@
 import Stack from '@mui/material/Stack';
+import { AllComments } from 'components/Comment';
 
 const Home = () => {
     return (
@@ -6,6 +7,7 @@ const Home = () => {
             <Stack flex={1}>
                 {/* This is the place for story list and post list */}
                 Timeline
+                <AllComments></AllComments>
             </Stack>
             <Stack width="300px">
                 {/* All Sidebar related things go here */}
