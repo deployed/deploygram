@@ -33,20 +33,18 @@ const SinglePostPhoto = () => {
   }, []);
 
   return (
-    <>
-      <Slider {...settings}>
-        {photosSrc.map((photosSrc, nr) => {
-          return (
-            <Box
-              key={nr}
-              component="img"
-              src={photosSrc}
-              sx={{ width: "625px", height: "625px" }}
-            />
-          );
-        })}
-      </Slider>
-    </>
+    <Slider {...settings}>
+      {photosSrc.map((photosSrc, nr) => {
+        return (
+          <Box
+            key={nr}
+            component="img"
+            src={photosSrc}
+            sx={{ width: "625px", height: "625px" }}
+          />
+        );
+      })}
+    </Slider>
   );
 };
 export default SinglePostPhoto;
