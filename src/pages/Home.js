@@ -12,7 +12,7 @@ const Home = () => {
             </Stack>
             <Stack width="300px">
                 {/* All Sidebar related things go here */}
-                Sidebar
+                <Sidebar/>
             </Stack>
         </Stack>
     );
