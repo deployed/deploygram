@@ -10,11 +10,14 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import Modal from '@mui/material/Modal';
 import { getUserId } from 'utils';
 import logo from 'images/deploygram-logo.png';
+import axios from 'axios';
+import PopupExtend from './Popup';
 
 const NavigationBar = () => {
   const navigate = useNavigate();
   const userId = getUserId();
   const [open, setOpen] = React.useState(false);
+  const [image, setImage] = React.useState(undefined); 
 
   return (
     <Box height="80px" display="flex" paddingX={3} alignItems="center" borderBottom="1px solid #dadada" bgcolor="white">
@@ -34,24 +37,7 @@ const NavigationBar = () => {
           </IconButton>
         </Stack>
       </Stack>
-      <Modal
-        open={open}
-        onClose={() =>setOpen(false)}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        sx={{margin: 'auto', justifyContent: 'center', alignItems: "center", display: 'flex'}}
-      >
-        <Stack style={{height: "400px", width: '400px', backgroundColor: 'white', borderRadius: '10px', border: '1px outset black'}}>
-          <Stack direction='row' justifyContent='space-between' borderBottom='2px solid black'>
-            <p/>
-            <p>Create new post</p>
-            <IconButton aria-label="home" size="large" onClick={() => setOpen(false)}>
-            <CloseIcon sx={{ fontSize: '30px', color: 'black', justifyContent: 'flex-end' }} />
-          </IconButton>
-          </Stack>
-          <input type="file" placeholder="Create new post" onChange={(cos) => console.log(cos)} style={{flex: 1, width: '100%'}}/>
-        </Stack>
-      </Modal>
+    <PopupExtend isOpen={open} onClose={() => setOpen(false)} />
     </Box>
   );
 };
