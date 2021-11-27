@@ -2,6 +2,7 @@ import PhotoPost from './PhotoPost';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
+import { nanoid } from 'nanoid';
 
 /** A carousel photo component.
  * 
@@ -33,8 +34,8 @@ const CarouselPhoto = ({ images }) => {
     };
 
     return (<Slider {...settings} style={style}>
-        {images.map((image, index) => {
-            return (<PhotoPost image={image} key={index}></PhotoPost>);
+        {images.map((image) => {
+            return (<PhotoPost image={image} key={nanoid()}></PhotoPost>);
         })
         }
     </Slider>
@@ -49,7 +50,7 @@ function SampleNextArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: 'block', color: 'black', scale:'2' , left: '575px' }}
+            style={{ ...style, display: 'block', color: 'black', scale:'2' , left: '575px', zIndex:'2' }}
             onClick={onClick}
         />
     );
@@ -60,7 +61,7 @@ function SamplePrevArrow(props) {
     return (
         <div
             className={className}
-            style={{ ...style, display: 'block', color: 'black', scale:'2', left: '25px' }}
+            style={{ ...style, display: 'block', color: 'black', scale:'2', left: '25px',  zIndex:'2' }}
             onClick={onClick}
         />
     );
