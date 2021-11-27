@@ -10,6 +10,8 @@ import IconButton from '@mui/material/IconButton';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
+
 
 export default function PopUp(){
     const [open, setOpen] = React.useState(false);
@@ -28,16 +30,28 @@ export default function PopUp(){
                 <AddBoxOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
             </IconButton>
             <Dialog open={open} onClose={handleClose}>
-            <Box padding="5px" display="flex" paddingX={2} alignItems="center" borderBottom="1px solid #dadada" bgcolor="white">
+            <Box width="600px" height="400px">
+            <Stack padding="5px" display="flex" direction="row" spacing={40} paddingX={2} alignItems="center" borderBottom="1px solid #dadada" bgcolor="white">
                 <DialogTitle>Create new post 
                 </DialogTitle>
-                <CloseIcon sx={{ cursor: 'pointer', marginLeft: 2 }} onClick={() => handleClose()}>
+                <CloseIcon sx={{ cursor: 'pointer', marginLeft: 2 }} onClick={() => handleClose()} float="right">
                 </CloseIcon>
+            </Stack>
+            <Box display="flex">
+                <DialogContent>
+                <input accept="image/*" style={{ display: 'none' }} 
+                        id="raised-button-file" multiple type="file"/>
+                <label htmlFor="raised-button-file">
+                    <Button variant="raised" component="span">
+                        Upload
+                    </Button>
+                </label> 
+                </DialogContent>
             </Box>
-                <DialogContent></DialogContent>
-                <DialogActions>
+                {/*<DialogActions>
                     <Button onClick={handleClose}>Select</Button>
-                </DialogActions>
+                </DialogActions>*/}
+                </Box>
             </Dialog>
         </div>
     );
