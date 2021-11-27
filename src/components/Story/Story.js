@@ -1,4 +1,4 @@
-import { StyledStack, StyledAvatar, StyledP} from './styles';
+import { StyledStack, StyledAvatar, StyledP } from './styles';
 
 const Story = ( { image, username } ) => {
     if (username.length >= 10)
