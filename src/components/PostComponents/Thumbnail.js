@@ -3,21 +3,19 @@ import { useNavigate } from "react-router-dom";
 import "./Thumbnail.css";
 import comment from "images/comments-16.png";
 
-const Thumbnail = ({ source }) => {
-  let commentCount = 16;
-  let heartCount = 28;
+const Thumbnail = ({ source, likes, comments, id }) => {
   const navigate = useNavigate();
   return (
     <div
       onClick={() => {
-        navigate("/home/");
+        navigate(`/posts/${id}`);
       }}
       className="container"
     >
       <img className="image" src={source} alt="zdjecie" loading="lazy" />
       <div className="overlay">
-        ❤ {heartCount} &nbsp;&nbsp;
-        <img src={comment} /> &nbsp;{commentCount}
+        ❤ {likes} &nbsp;&nbsp;
+        <img src={comment} /> &nbsp;{comments}
       </div>
     </div>
   );
