@@ -14,7 +14,7 @@ type User = UserData & {
 }
 
 type UserContextType = {
-    user: UserData | null;
+    user: User | null;
     saveUser: (data: UserData) => void;
 };
 
