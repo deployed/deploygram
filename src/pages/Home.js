@@ -1,5 +1,7 @@
 import Stack from '@mui/material/Stack';
 
+import SideBar from '../components/sidebar/SideBar.js';
+
 const Home = () => {
     return (
         <Stack direction="row" spacing={2}>
@@ -8,8 +10,7 @@ const Home = () => {
                 Timeline
             </Stack>
             <Stack width="300px">
-                {/* All Sidebar related things go here */}
-                Sidebar
+                <SideBar/>
             </Stack>
         </Stack>
     );
