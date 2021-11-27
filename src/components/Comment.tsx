@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from '@mui/material';
+import { Box, Avatar, Typography } from '@mui/material';
 
 
 interface CommentProps {
@@ -10,8 +10,7 @@ interface CommentProps {
 }
 
 
-export const Comment: React.FC<CommentProps> = (props) => {
-    const {avatar, username, text, creationDate} = props;
+export const Comment: React.FC<CommentProps> = ({avatar, username, text, creationDate}) => {
 
     const commentStyle = {
         padding: "8px",
@@ -28,52 +27,20 @@ export const Comment: React.FC<CommentProps> = (props) => {
     const now = new Date();
     const createdAt = new Date(creationDate);
     const elapsed = Math.ceil((now.getTime() - createdAt.getTime()) / 1000 / 60);
-
-    const displayFullDate = (elapsed > 60);
-    console.log(displayFullDate);
-    const displayedTime = displayFullDate ? (<div style={{marginBottom: "8px"}}><i>{createdAt.toDateString()}</i></div>) : (<div><i>{elapsed} minutes ago</i></div>);
+    const displayedTime = (elapsed > 60) ? (<div style={{marginBottom: "8px"}}><i>{createdAt.toDateString()}</i></div>) : (<div><i>{elapsed} minutes ago</i></div>);
 
     return (
-        <div style={commentStyle}>
+        <Box sx={commentStyle}>
             <Avatar alt="User Image" src={avatar} style={marginStyle}/>
-            <div style={marginStyle}>
-                <div><b>{username}</b> {text}</div>
-                {displayedTime}
-            </div>
-        </div>
-    );
-}
-
-
-import { useState, useEffect } from 'react';
-
-export function AllComments() {
-
-    const [comments, setComments] = useState([1, 2, 4]);
-
-    useEffect(() => {
-        // fetch("https://deploygram.deployed.space/comments").then(response => response.json()).then(arr => setComments(arr));
-        // fetch("https://deploygram.deployed.space/comments").then(response => response.json()).then(arr => console.log(arr));
-    }, []);
-
-    const mockup = {
-        avatar:"https://www.ckziu.jaworzno.pl/wp-content/uploads/2016/09/no-user-image.gif",
-        username:"some username",
-        text:"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable",
-        creationDate:"2021-11-27T10:34:56.766Z"
-    };
-
-    return (
-        <div>
-            {
-                comments.map(x => {
-                    return (
-                        <Comment key={0} {...mockup}>
-                            
-                        </Comment>
-                    );
-                })
-            }
-        </div>
+            
+            <Box sx={marginStyle}>                
+                <Typography style={{marginBottom: "8px"}}>
+                    <b>{username}</b> {text}
+                </Typography>
+                <Typography>
+                    {displayedTime}
+                </Typography>
+            </Box>
+        </Box>
     );
 }

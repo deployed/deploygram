@@ -7,7 +7,6 @@ const Home = () => {
             <Stack flex={1}>
                 {/* This is the place for story list and post list */}
                 Timeline
-                <AllComments></AllComments>
             </Stack>
             <Stack width="300px">
                 {/* All Sidebar related things go here */}
