@@ -1,5 +1,4 @@
 import Stack from '@mui/material/Stack';
-import { AllComments } from 'components/Comment';
 
 const Home = () => {
     return (
