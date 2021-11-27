@@ -17,26 +17,25 @@ const baseStyle = {
     outline: 'none',
     transition: 'border .24s ease-in-out',
     height: '475px'
-  };
-  
-  const activeStyle = {
+};
+
+const activeStyle = {
     borderColor: '#bdbdbd'
-  };
-  
-  const acceptStyle = {
+};
+
+const acceptStyle = {
     borderColor: '#bdbdbd'
-  };
-  
-  const rejectStyle = {
+};
+
+const rejectStyle = {
     borderColor: 'white'
-  };
+};
 
 
 function Dropzone(props) {
     const {acceptedFiles,getRootProps,getInputProps,isDragActive,
         isDragAccept,
         isDragReject} = useDropzone({accept: 'image/jpeg, image/png, video/mp4, video/ogg'});
-    const files = acceptedFiles.map(file => <li key={file.path}>{file.path}</li>);
     
     const style = useMemo(() => ({
         ...baseStyle,

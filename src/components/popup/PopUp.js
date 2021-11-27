@@ -28,7 +28,7 @@ export default function PopUp(){
     
     return(
         <div>
-            <IconButton aria-label="create post" size="large" onClick={() => handleClickOpen()}>
+            <IconButton aria-label="create post" size="large" onClick={handleClickOpen}>
                 <AddBoxOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
             </IconButton>
             <Dialog open={open} onClose={handleClose}>
@@ -41,19 +41,9 @@ export default function PopUp(){
             </Stack>
             <Box display="flex">
                 <DialogContent>
-                {/*<input accept="image/*" style={{ display: 'none' }} 
-                        id="raised-button-file" multiple type="file"/>
-                <label htmlFor="raised-button-file">
-                    <Button variant="raised" component="span">
-                        Upload
-                    </Button>
-                </label>*/}
                 <Dropzone /> 
                 </DialogContent>
             </Box>
-                {/*<DialogActions>
-                    <Button onClick={handleClose}>Select</Button>
-                </DialogActions>*/}
                 </Box>
             </Dialog>
         </div>
