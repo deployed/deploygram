@@ -14,7 +14,8 @@ export const StyledAvatar = styled(Avatar)({
 export const StyledStack = styled(Stack)({
     alignItems: 'center',
     backgroundColor: grey[50],
-    width: '84px'
+    width: '84px',
+    padding: '1em'
 });
     
 export const StyledTypography = styled(Typography)({
@@ -23,5 +24,6 @@ export const StyledTypography = styled(Typography)({
     fontFamily: 'Poppins, Arial, Helvetica, sans-serif',
     fontSize: '16px',
     color: grey[900],
-    textDecoration: 'none solid rgb(0, 0, 0)'
+    textDecoration: 'none solid rgb(0, 0, 0)',
+    marginTop: '5px'
 });
