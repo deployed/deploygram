@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import PopUp from 'components/popup/PopUp';
 
 import { getUserId } from 'utils';
 import logo from 'images/deploygram-logo.png';
@@ -24,9 +24,7 @@ const NavigationBar = () => {
                     <IconButton aria-label="home" size="large" onClick={() => navigate('/')}>
                         <HomeOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
                     </IconButton>
-                    <IconButton aria-label="create post" size="large" onClick={() => console.log('Open modal for post adding!')}>
-                        <AddBoxOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
-                    </IconButton>
+                    <PopUp />                   
                     <IconButton aria-label="profile" size="large" onClick={() => navigate(`/profiles/${userId}`)}>
                         <AccountCircleIcon sx={{ fontSize: '43px', color: 'black' }} />
                     </IconButton>

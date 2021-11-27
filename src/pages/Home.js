@@ -12,6 +12,6 @@ const Home = () => {
             </Stack>
         </Stack>
     );
-};
+}
 
 export default Home;
