@@ -1,3 +1,5 @@
+import PostInfo from 'components/PostInfo';
+
 import Stack from '@mui/material/Stack';
 
 const Home = () => {
