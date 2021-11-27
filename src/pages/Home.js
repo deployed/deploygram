@@ -1,20 +1,33 @@
 import Stack from '@mui/material/Stack';
-import PostInfo from 'components/PostInfo';
+import PostPreviewTimeline from 'components/PostPreviewTimeline'
+import { useEffect, useState } from 'react';
 
 const Home = () => {
-    return (
-        <Stack direction="row" spacing={2}>
-            <Stack flex={1}>
-                {/* This is the place for story list and post list */}
-                Timeline
-            </Stack>
-            <Stack width="300px">
-                {/* All Sidebar related things go here */}
-                <PostInfo userName="Manuel XXX" description="askdaklsdjawdadsfdsvgbftnrt"/>
-                Sidebar
-            </Stack>
-        </Stack>
-    );
+  const [profileData, setProfileData] = useState(null);
+  const [posts, setPosts] = useState(null);
+
+  useEffect(() => {
+    fetch('https://deploygram.deployed.space/posts')
+      .then(res => res.json())
+      .then((res) => {
+        setPosts(res);
+      });
+  }, [])
+
+  return (
+    <Stack direction="row" spacing={2}>
+      <Stack flex={1}>
+        Timeline
+        {posts == null ? null : posts.map((item, i) => {
+          return <PostPreviewTimeline username={item.userId} images={item.images} key={i} />
+        })}
+
+      </Stack>
+      <Stack width="300px">
+        Sidebar
+      </Stack>
+    </Stack>
+  );
 };
 
 export default Home;
