@@ -1,4 +1,5 @@
 import Stack from '@mui/material/Stack';
+import Storiesarray from "components/Storiesarray";
 import PostPreviewTimeline from 'components/PostPreviewTimeline'
 import { useEffect, useState } from 'react';
 
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <Stack direction="row" spacing={2}>
       <Stack flex={1}>
+        <Storiesarray/>
         Timeline
         {posts == null ? null : posts.map((item, i) => {
           return <PostPreviewTimeline username={item.userId} images={item.images} key={i} />
@@ -24,7 +26,7 @@ const Home = () => {
 
       </Stack>
       <Stack width="300px">
-        Sidebar
+        <Sidebar />
       </Stack>
     </Stack>
   );
