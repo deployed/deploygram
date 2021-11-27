@@ -1,21 +1,17 @@
-import Stack from "@mui/material/Stack";
-import ThumbnailGrid from "components/PostComponents/ThumbnailGrid";
-
-import SideBar from '../components/sidebar/SideBar.js';
-
+import Stack from '@mui/material/Stack';
+import Storiesarray from "components/Storiesarray";
 const Home = () => {
-  return (
-    <Stack direction="row" spacing={2}>
-      <Stack flex={1}>
-        {/* This is the place for story list and post list */}
-        Timeline
-      </Stack>
-      <Stack width="300px">
-        {/* All Sidebar related things go here */}
-        Sidebar
-      </Stack>
-    </Stack>
-  );
-};
+    return (
+        <Stack direction="row" spacing={2}>
+            <Stack flex={1}>
+                {/* This is the place for story list and post list */}
+                <Storiesarray/>
+            </Stack>
+            <Stack width="300px">
+                {/* All Sidebar related things go here */}
+            </Stack>
+        </Stack>
+    );
+}
 
 export default Home;
