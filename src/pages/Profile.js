@@ -16,25 +16,25 @@ const Profile = () => {
             .then(res => res.json())
             .then((res) => {
                 setProfileData(res);
-                //console.log(res);
             });
             fetch('https://deploygram.deployed.space/posts')
             .then(res => res.json())
             .then((res) => {
                 setPosts(filterPosts(res));
-                console.log(res);
-                //console.log()
             });
     }, []) 
 
     const filterPosts = (posts) => {
-        let toReturn = [];
-        posts.forEach((post, index) => {
-            if (post.userId == params.id) {
-                toReturn.push(post);
-            }
+        return posts.filter((post) => {
+            return post.userId === params.id
         })
-        return toReturn;
+        // let toReturn = [];
+        // posts.forEach((post, index) => {
+        //     if (post.userId == params.id) {
+        //         toReturn.push(post);
+        //     }
+        // })
+        // return toReturn;
     }
 
     return (

@@ -1,18 +1,9 @@
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import { useEffect, useState } from 'react';
-import  { useParams } from 'react-router-dom';
+import { Stack, Box, Avatar, CircularProgress } from '@mui/material';
+import {likesCount} from '../utils/index'
 
-const ProfilePageHeader = (props) => {
+const ProfilePageHeader = ({ posts, id, profileData }) => {
 
-    const likesCount = () => {
-        let likes = 0;
-        props.posts.forEach((post, index) => {
-            likes += post.likes.length;
-        })
-        return likes;
-    }
+    
 
     return (
             <Stack direction="row" flex={1}>
@@ -21,18 +12,18 @@ const ProfilePageHeader = (props) => {
                 </Box>
                 <Stack flex={3} sx={{justifyContent: 'center' }}width="340px" direction="column">
                 <Box sx={{ padding: 2, fontSize: '2em', fontWeight: 'bold' }}>
-                    {props.profileData == null ? null : props.profileData.nickname}
+                    {profileData == null ? <CircularProgress /> : profileData.nickname}
                     </Box>
                     <Stack direction="row">
                         <Box sx={{ padding: 2 }}>
-                            <b>{props.posts == null ? null : props.posts.length}</b> posts
+                            <b>{posts == null ? <CircularProgress /> : posts.length}</b> posts
                         </Box>
                         <Box sx={{ padding: 2 }}>
-                            <b>{props.posts == null ? null : likesCount()}</b> likes
+                            <b>{posts == null ? <CircularProgress /> : likesCount(posts)}</b> likes
                         </Box>
                     </Stack>
                     <Box sx={{ padding: 2 }}>
-                    {props.profileData == null ? null : props.profileData.bio}
+                    {profileData == null ? <CircularProgress /> : profileData.bio}
                     </Box>
                 </Stack>
             </Stack>  
