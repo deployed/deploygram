@@ -1,6 +1,6 @@
 import { StyledStack, StyledAvatar, StyledP } from './styles';
 
-const Story = ( { image, username } ) => {
+export const Story = ( { image, username } ) => {
     if (username.length >= 10)
     {
         username = username.substring(0, 8) + '...';
@@ -13,5 +13,3 @@ const Story = ( { image, username } ) => {
         </StyledStack>
     );
 };
-
-export default Story;
