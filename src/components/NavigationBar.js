@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import IconButton from '@mui/material/IconButton';
@@ -39,9 +39,9 @@ const NavigationBar = () => {
         onClose={() =>setOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        sx={{margin: 'auto'}}
+        sx={{margin: 'auto', justifyContent: 'center', alignItems: "center", display: 'flex'}}
       >
-        <Box style={{height: "400px", width: '400px', backgroundColor: 'white', margin: '8% 35%', borderRadius: '10px', border: '1px outset black'}}>
+        <Stack style={{height: "400px", width: '400px', backgroundColor: 'white', borderRadius: '10px', border: '1px outset black'}}>
           <Stack direction='row' justifyContent='space-between' borderBottom='2px solid black'>
             <p/>
             <p>Create new post</p>
@@ -49,8 +49,8 @@ const NavigationBar = () => {
             <CloseIcon sx={{ fontSize: '30px', color: 'black', justifyContent: 'flex-end' }} />
           </IconButton>
           </Stack>
-          <input type="file" placeholder="Create new post" onChange={(cos) => console.log(cos)} style={{height: "400px", width: '400px'}}/>
-        </Box>
+          <input type="file" placeholder="Create new post" onChange={(cos) => console.log(cos)} style={{flex: 1, width: '100%'}}/>
+        </Stack>
       </Modal>
     </Box>
   );
