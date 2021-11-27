@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 
 const PostPreview = ({ name, imageSrc, comment }) => {
     return (
-        <Container >
-            <Grid container spacing={0} rowSpacing={2} alignItems='center' border={1} borderColor='darkgrey'>
+        <Container>
+            <Grid container spacing={0} rowSpacing={2} alignItems='center' border={1} borderColor='darkgrey' marginY="20px">
                 <Grid item xs={1.5} marginLeft={2}>
                     <Avatar sx={{ width: 60, height: 60 }}>{name[0]}</Avatar>
                 </Grid>
@@ -16,7 +16,7 @@ const PostPreview = ({ name, imageSrc, comment }) => {
                     </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <img src={imageSrc} alt='bla' width='100%' height='100%'/>
+                    <img src={`https://deploygram.deployed.space/${imageSrc.substring(8)}`} alt='bla' width='100%' height='100%'/>
                 </Grid>
                 <Grid item xs={12} marginLeft={1}>
                     <Typography variant='body1' component='h1' fontFamily='Arial'>
