@@ -25,4 +25,3 @@ export const StyledTypography = styled(Typography)({
     color: grey[900],
     textDecoration: 'none solid rgb(0, 0, 0)'
 });
-    
