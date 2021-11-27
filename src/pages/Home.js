@@ -1,6 +1,8 @@
 import Stack from "@mui/material/Stack";
 import ThumbnailGrid from "components/PostComponents/ThumbnailGrid";
 
+import SideBar from '../components/sidebar/SideBar.js';
+
 const Home = () => {
   return (
     <Stack direction="row" spacing={2}>

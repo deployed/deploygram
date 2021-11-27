@@ -15,6 +15,7 @@ const Post = () => {
   }, []);
 
   return <div>Post page {userId ? <ThumbnailGrid id={userId} /> : ""}</div>;
+
 };
 
 export default Post;
