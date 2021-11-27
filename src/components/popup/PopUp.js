@@ -32,11 +32,11 @@ export default function PopUp(){
                 <AddBoxOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
             </IconButton>
             <Dialog open={open} onClose={handleClose}>
-            <Box width="600px" height="400px">
+            <Box width="600px" height="600px">
             <Stack padding="5px" display="flex" direction="row" spacing={40} paddingX={2} alignItems="center" borderBottom="1px solid #dadada" bgcolor="white">
                 <DialogTitle>Create new post 
                 </DialogTitle>
-                <CloseIcon sx={{ cursor: 'pointer', marginLeft: 2 }} onClick={() => handleClose()} float="right">
+                <CloseIcon sx={{ cursor: 'pointer', marginLeft: 2, size: '30px'}} onClick={() => handleClose()} float="right">
                 </CloseIcon>
             </Stack>
             <Box display="flex">

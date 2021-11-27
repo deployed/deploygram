@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
+import Stack from '@mui/material/Stack';
 
 const baseStyle = {
     flex: 1,
@@ -8,27 +9,26 @@ const baseStyle = {
     flexDirection: 'column',
     alignItems: 'center',
     padding: '20px',
-    borderWidth: 2,
-    borderRadius: 2,
-    borderColor: '#eeeeee',
+    borderColor: 'white',
     borderStyle: 'dashed',
-    backgroundColor: '#fafafa',
+    borderWidth: 5,
+    borderRadius: 5,
     color: '#bdbdbd',
     outline: 'none',
     transition: 'border .24s ease-in-out',
-    height: '100%'
+    height: '475px'
   };
   
   const activeStyle = {
-    borderColor: '#2196f3'
+    borderColor: '#bdbdbd'
   };
   
   const acceptStyle = {
-    borderColor: '#00e676'
+    borderColor: '#bdbdbd'
   };
   
   const rejectStyle = {
-    borderColor: '#eee'
+    borderColor: 'white'
   };
 
 
@@ -52,13 +52,11 @@ function Dropzone(props) {
     return (
         <div>
             <div {...getRootProps({className: 'dropzone', style})}>
-                <AddPhotoAlternateOutlinedIcon fontSize="large"/>
-            <input {...getInputProps()} />
-            <p>Drag your photos and videos here.</p>
-            </div>
-            <div>
-                <h4>Files</h4>
-                <ul>{files}</ul>
+            <Stack display="flex" direction="column"  paddingY={15} alignItems="center">
+                <AddPhotoAlternateOutlinedIcon style={{ fontSize: 80 }}/>
+                <input {...getInputProps()} />
+                <p>Drag your photos and videos here.</p>
+            </Stack>
             </div>
         </div>
     );
