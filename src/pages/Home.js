@@ -1,6 +1,7 @@
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import StoriesList from 'components/StoriesList/StoriesList';
+import Sidebar from './SidebarFolder/Sidebar';
 
 const Home = () => {
     return (
