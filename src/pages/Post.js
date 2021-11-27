@@ -7,7 +7,7 @@ const Post = () => {
 
     return (
         <div>
-            Post page
+            Post
         </div>
     );
 };
