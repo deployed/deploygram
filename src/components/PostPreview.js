@@ -1,9 +1,12 @@
-import { Container, Grid, Avatar, Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
 const PostPreview = ({ name, imageSrc, comment }) => {
     return (
         <Container >
-            <Grid container spacing={0} rowSpacing ={2} alignItems='center' border={1} borderColor='darkgrey'>
+            <Grid container spacing={0} rowSpacing={2} alignItems='center' border={1} borderColor='darkgrey'>
                 <Grid item xs={1.5} marginLeft={2}>
                     <Avatar sx={{ width: 60, height: 60 }}>{name[0]}</Avatar>
                 </Grid>
