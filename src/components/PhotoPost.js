@@ -13,7 +13,7 @@ const PhotoPost = ({ image, alt = '' }) => {
     };
 
     return (
-        <img src={image} width="625px" height="625px" style={style} alt={alt}/>
+        <img src={"https://deploygram.deployed.space/"+image.toString().substr(8,)} width="625px" height="625px" style={style} alt={alt}/>
     );
 };
 
