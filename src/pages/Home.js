@@ -1,5 +1,6 @@
-import Stack from '@mui/material/Stack';
+import { Stack, Box } from '@mui/material';
 import PostInfo from 'components/PostInfo';
+import Suggestion from 'components/Suggestion';
 
 const Home = () => {
     return (
@@ -11,7 +12,12 @@ const Home = () => {
             <Stack width="300px">
                 {/* All Sidebar related things go here */}
                 <PostInfo userName="Manuel XXX" description="askdaklsdjawdadsfdsvgbftnrt"/>
-                Sidebar
+                <Stack>
+                    <Box sx={{ marginTop: 3 }}>
+                        Suggestions for you
+                    </Box>
+                    <Suggestion img="" name="Jestem Sugestią" href="/profile"/>
+                </Stack>
             </Stack>
         </Stack>
     );
