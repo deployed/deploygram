@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
-import './style.css'
-import image from 'images/morty.jpg'
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 interface PostINfoProps {
     userName: string;
@@ -10,22 +10,21 @@ interface PostINfoProps {
     image: string;
 }
 
-const PostInfo: React.FC<PostINfoProps> = ({image, userName, description, data}) => {
+const PostInfo: React.FC<PostINfoProps> = ({ image, userName, description, data }) => {
     return (
-        <div className="postInfo">
-            <div className="header">
-                <Avatar alt="Remy Sharp" src={image} sx={{height: '60px', width: '60px'}} />
-                <h3>{userName}</h3>
-            </div>
-            <div className="text">
-                <p>
-                    {description}
-                </p>
-            </div>
-            <p>#{data}</p>
-        </div>
+        <>
+            <Box sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center"
+            }}>
+                <Avatar alt="Remy Sharp" src={image} sx={{ height: '60px', width: '60px' }} />
+                <Typography variant="h4" sx={{fontSize: "18px", width: "90%"}} align="center">{userName}</Typography>
+            </Box>
+            <Typography variant="body1" sx={{fontSize: "13px", marginTop: "10px"}}>{description}</Typography>
+            <Typography variant="body1" sx={{fontSize: "13px", marginTop: "15px"}}>###{data}</Typography>
+        </>
     )
 }
 
-
-export default PostInfo
+export default PostInfo;
