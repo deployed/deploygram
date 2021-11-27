@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import Button from '@mui/material/Button';
 //import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -11,6 +11,8 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
+import { height } from '@mui/system';
+import Dropzone from 'components/popup/Dropzone';
 
 
 export default function PopUp(){
@@ -23,7 +25,7 @@ export default function PopUp(){
     const handleClose = () => {
         setOpen(false);
     };
-
+    
     return(
         <div>
             <IconButton aria-label="create post" size="large" onClick={() => handleClickOpen()}>
@@ -39,13 +41,14 @@ export default function PopUp(){
             </Stack>
             <Box display="flex">
                 <DialogContent>
-                <input accept="image/*" style={{ display: 'none' }} 
+                {/*<input accept="image/*" style={{ display: 'none' }} 
                         id="raised-button-file" multiple type="file"/>
                 <label htmlFor="raised-button-file">
                     <Button variant="raised" component="span">
                         Upload
                     </Button>
-                </label> 
+                </label>*/}
+                <Dropzone /> 
                 </DialogContent>
             </Box>
                 {/*<DialogActions>

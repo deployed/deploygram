@@ -24,7 +24,7 @@ const NavigationBar = () => {
                     <IconButton aria-label="home" size="large" onClick={() => navigate('/')}>
                         <HomeOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
                     </IconButton>
-                    <PopUp></PopUp>                   
+                    <PopUp />                   
                     <IconButton aria-label="profile" size="large" onClick={() => navigate(`/profiles/${userId}`)}>
                         <AccountCircleIcon sx={{ fontSize: '43px', color: 'black' }} />
                     </IconButton>
