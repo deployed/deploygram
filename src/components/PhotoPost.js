@@ -1,4 +1,11 @@
 
+/** A simple photo component.
+ * 
+ * Essentially it simply wraps over `img` tag.
+ * 
+ * @param {*} image a link to image source.
+ * @returns image view.
+ */
 const PhotoPost = ({ image }) => {
     const style = {
         objectFit: 'cover',
