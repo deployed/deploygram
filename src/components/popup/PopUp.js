@@ -9,6 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import IconButton from '@mui/material/IconButton';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import CloseIcon from '@mui/icons-material/Close';
+import Box from '@mui/material/Box';
 
 export default function PopUp(){
     const [open, setOpen] = React.useState(false);
@@ -27,8 +28,12 @@ export default function PopUp(){
                 <AddBoxOutlinedIcon sx={{ fontSize: '43px', color: 'black' }} />
             </IconButton>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle sx={{ m: 0, p: 2, borderBottom: 1 }}>Create new post 
-                    <CloseIcon onClick={() => handleClose()}></CloseIcon></DialogTitle>
+            <Box padding="5px" display="flex" paddingX={2} alignItems="center" borderBottom="1px solid #dadada" bgcolor="white">
+                <DialogTitle>Create new post 
+                </DialogTitle>
+                <CloseIcon sx={{ cursor: 'pointer', marginLeft: 2 }} onClick={() => handleClose()}>
+                </CloseIcon>
+            </Box>
                 <DialogContent></DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose}>Select</Button>
