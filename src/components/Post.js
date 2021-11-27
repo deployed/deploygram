@@ -9,7 +9,7 @@ export default function ImageAvatars({profileName,profileImage,description}) {
   return (
     <Stack direction="column"> 
         <Stack direction="row" spacing={2}  alignItems = "center">
-        <Avatar alt="Remy Sharp" src={a}  sx={{ width: 69, height: 69 }} />
+        <Avatar alt="Remy Sharp" src={profileImage}  sx={{ width: 69, height: 69 }} />
         <Stack direction="column" spacing={2}>
         <h1 style = {{ fontWeight: 'bold', fontFamily: 'Ink Free'}}>
         {profileName}
