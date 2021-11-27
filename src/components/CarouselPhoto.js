@@ -2,7 +2,6 @@ import PhotoPost from './PhotoPost';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
-import { nanoid } from 'nanoid';
 
 /** A carousel photo component.
  * 
@@ -35,7 +34,7 @@ const CarouselPhoto = ({ images }) => {
 
     return (<Slider {...settings} style={style}>
         {images.map((image) => {
-            return (<PhotoPost image={image} key={nanoid()}></PhotoPost>);
+            return (<PhotoPost image={image} key={image} />);
         })
         }
     </Slider>
