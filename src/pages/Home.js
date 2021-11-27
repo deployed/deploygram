@@ -4,6 +4,7 @@ import PostPreviewTimeline from 'components/PostPreviewTimeline';
 import { useEffect, useState } from 'react';
 import Sidebar from '../components/sidebar/SideBar';
 import Comment from '../components/Comment';
+import dog from '../images/dog.jpg';
 
 const Home = () => {
     const [profileData, setProfileData] = useState(null);
