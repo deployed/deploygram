@@ -23,7 +23,7 @@ const Home = () => {
         {posts == null ? null : posts.map((item, i) => {
           return <PostPreviewTimeline username={item.userId} images={item.images} key={i} />
         })}
-
+         <Comment userName="Name" text="My new very very very long comment" creationDate={new Date("November 27, 2021 12:15:00")} imgUrl={dog}></Comment>
       </Stack>
       <Stack width="300px">
         <Sidebar />
