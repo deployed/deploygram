@@ -5,10 +5,11 @@ import "./comment.css";
 function Comment({userName, text, creationDate, imgUrl}) {
 
     var day = creationDate.getDate();
-    var month = creationDate.getMonth();
+    var month = creationDate.getMonth() + 1;
     var year = creationDate.getFullYear();
     var h = creationDate.getHours();  
-    var m = creationDate.getMinutes();  
+    var m = creationDate.getMinutes(); 
+    
 
     return (
         <>
@@ -19,7 +20,7 @@ function Comment({userName, text, creationDate, imgUrl}) {
                         <p className="user">{userName}</p>
                         <p className="text">{text}</p>
                     </div>
-                    <p className="date">{day + "-" + month + "-" + year + " " + h + "h " + m + "min"}</p>
+                    <p className="date">{day + "-" + month + "-" + day + " " + h + "h " + m + "min"}</p>
                 </div>
             </div>
         </>
