@@ -1,5 +1,4 @@
 import Stack from '@mui/material/Stack';
-// import PostInfo from 'components/PostInfo';
 
 import SideBar from '../components/sidebar/SideBar.js';
 
@@ -13,7 +12,6 @@ const Home = () => {
             <Stack width="300px">
                 <SideBar/>
                 {/* All Sidebar related things go here */}
-                {/*<PostInfo userName="Manuel XXX" description="askdaklsdjawdadsfdsvgbftnrt"/>*/}
                 Sidebar
             </Stack>
         </Stack>

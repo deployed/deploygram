@@ -20,7 +20,7 @@ export default function Suggested( {users,user} ){
                     return u.id !== user.id;
                 }).map((u) => {
                     return ( <ProfAvatar initials={u.nickname.slice(0,2)} color='#ddd' user={u.nickname} width='300' key={u.id}/>)
-                })//.slice(0,3)
+                })
             }
         </Box>
 

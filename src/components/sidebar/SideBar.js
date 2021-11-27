@@ -17,7 +17,6 @@ const suggestHeight = drawerHeight - headerHeight - footerHeight;
 export default function SideBar() {
 
     const [users, setUsers] = React.useState([]);
-    // const [user, setUser]   = React.useState({});
 
     React.useEffect(()=> {
         fetchUsers();
@@ -25,11 +24,9 @@ export default function SideBar() {
     const fetchUsers = async () => {
         const usersData = await axios.get('https://deploygram.deployed.space/users');
         setUsers(usersData);
-        // setUser(localStorage.getItem('user'));
     };
 
     const user = localStorage.getItem('user');
-    console.log(user);
 
     return (
         <Box
