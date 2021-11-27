@@ -2,15 +2,8 @@ import PhotoPost from './PhotoPost';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 const CarouselPhoto = ({ images }) => {
-    const chevronStyle = {
-        color: 'black',
-        scale: '2'
-    };
-
     const settings = {
         dots: true,
         infinite: true,
