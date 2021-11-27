@@ -1,4 +1,5 @@
 import Stack from '@mui/material/Stack';
+import SidebarHeader from 'components/SidebarHeader';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <Stack width="300px">
                 {/* All Sidebar related things go here */}
                 Sidebar
+                <SidebarHeader/>
             </Stack>
         </Stack>
     );
